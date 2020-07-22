@@ -22,5 +22,5 @@ class QuantumCircuit(QuantumRunner):
 
 if __name__ == "__main__":
     model = HybridNetwork(QuantumCircuit)
-    model = train(model, mnist(), epochs=1)
+    model = train(model, mnist())
     test(model, mnist())
