@@ -11,7 +11,7 @@ def train(model, dataset, *, epochs=20, learning_rate=0.0001, verbose=True):
     for epoch in range(epochs):
 
         total_loss = []
-        for batch_idx, (data, target) in enumerate(dataset):
+        for (data, target) in dataset:
             optimizer.zero_grad()
             output = model(data)
             loss = loss_func(output, target)

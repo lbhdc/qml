@@ -1,5 +1,4 @@
 import qiskit
-
 from data_set import mnist
 from hybrid_network import HybridNetwork
 from quantum_runner import QuantumRunner
@@ -23,5 +22,5 @@ class QuantumCircuit(QuantumRunner):
 
 if __name__ == "__main__":
     model = HybridNetwork(QuantumCircuit)
-    model = train(model, mnist())
+    model = train(model, mnist(), epochs=1)
     test(model, mnist())

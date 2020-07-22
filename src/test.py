@@ -8,7 +8,7 @@ def test(model, dataset, *, verbose=True):
 
     with torch.no_grad():
         correct = 0
-        for i, (data, target) in enumerate(dataset):
+        for (data, target) in dataset:
             output = model(data)
             pred = output.argmax(dim=1, keepdim=True)
             correct += pred.eq(target.view_as(pred)).sum().item()

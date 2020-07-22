@@ -3,8 +3,6 @@ import qiskit
 
 
 class QuantumRunner:
-
-
     def run(self, thetas):
         job = qiskit.execute(
             self._circuit,
@@ -14,7 +12,6 @@ class QuantumRunner:
         )
 
         result = job.result().get_counts(self._circuit)
-
         counts = np.array(list(result.values()))
         states = np.array(list(result.keys())).astype(float)
         probabilities = counts / self.shots
